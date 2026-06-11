@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hidden;height:100vh;width:100vw;user-select:none}
+
+/* ── STAGE & SLIDES ─────────────────────────────────── */
+.stage{width:100vw;height:100vh;position:relative}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:52px 40px 80px;opacity:0;transform:scale(1.04);transition:opacity 0.7s ease,transform 0.7s ease;pointer-events:none}
+.slide.active{opacity:1;transform:scale(1);pointer-events:all}
+.slide.exiting{opacity:0;transform:scale(0.97)}
+
+/* ── BACKGROUNDS ────────────────────────────────────── */
+.s0{background:radial-gradient(ellipse at 30% 40%,#1a2d5a 0%,#0b1426 55%,#0d0d20 100%)}
+.s1{background:radial-gradient(ellipse at 60% 30%,#1e3d1e 0%,#0f2010 55%,#0a150a 100%)}
+.s2{background:radial-gradient(ellipse at 40% 60%,#0f2535 0%,#081820 55%,#040e15 100%)}
+.s3{background:radial-gradient(ellipse at 50% 40%,#2e1800 0%,#1a0e00 55%,#0d0700 100%)}
+.s4{background:radial-gradient(ellipse at 35% 55%,#120838 0%,#09042a 55%,#040215 100%)}
+.s5{background:radial-gradient(ellipse at 65% 35%,#2a0e1a 0%,#1a0710 55%,#0e040a 100%)}
+.s6{background:radial-gradient(ellipse at 55% 25%,#231205 0%,#150c03 55%,#0d0702 100%)}
+.s7{background:radial-gradient(ellipse at 45% 45%,#2d0a18 0%,#1c0510 55%,#0f030a 100%)}
+.s8{background:radial-gradient(ellipse at 50% 50%,#0d1830 0%,#060f1e 55%,#030810 100%)}
+.s9{background:radial-gradient(ellipse at 50% 50%,#1a1400 0%,#2a2000 40%,#0d0800 100%)}
+
+/* subtle star dust on all slides */
+.slide::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,0.14) 0%,transparent 100%),radial-gradient(1px 1px at 78% 68%,rgba(255,255,255,0.09) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 54% 18%,rgba(255,255,255,0.11) 0%,transparent 100%),radial-gradient(1px 1px at 36% 82%,rgba(255,255,255,0.07) 0%,transparent 100%);pointer-events:none}
+
+/* ── ACCENT COLORS ──────────────────────────────────── */
+.s0{--acc:#D4A843}.s1{--acc:#7DC47C}.s2{--acc:#7EC4D8}.s3{--acc:#D4A843}.s4{--acc:#9B8FE0}.s5{--acc:#D4849A}.s6{--acc:#D4B06A}.s7{--acc:#C47898}.s8{--acc:#D4A843}.s9{--acc:#D4A843}
+
+/* ── CONTENT ANIMATION ──────────────────────────────── */
+.si{position:relative;z-index:1;max-width:700px;width:100%;animation:cIn 0.8s ease 0.3s both}
+@keyframes cIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────── */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:20px;color:var(--acc)}
+.headline{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,82px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;margin-bottom:6px}
+.headline-sub{font-family:'Playfair Display',serif;font-size:clamp(38px,7vw,72px);font-weight:400;font-style:italic;line-height:1.05}
+.subtext{font-size:clamp(14px,2.2vw,17px);font-weight:300;line-height:1.7;opacity:0.78;margin-top:26px;max-width:520px;margin-left:auto;margin-right:auto}
+.detail{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;opacity:0.4;margin-top:28px}
+
+/* ── ART DECO DIVIDER (signature element) ───────────── */
+.dr{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 24px;color:var(--acc)}
+.dr::before,.dr::after{content:'';flex:1;max-width:80px;height:1px;background:currentColor;opacity:0.4}
+.dr span{font-size:10px;opacity:0.5;letter-spacing:0.2em;text-transform:uppercase;font-weight:400}
+.dia{width:6px;height:6px;background:currentColor;transform:rotate(45deg);opacity:0.6;flex-shrink:0}
+
+/* ── MAPS LINK ──────────────────────────────────────── */
+.ml{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--acc);text-decoration:none;border:1px solid rgba(255,255,255,0.18);padding:8px 18px;border-radius:20px;margin-top:26px;transition:all 0.2s ease;backdrop-filter:blur(4px);background:rgba(255,255,255,0.04)}
+.ml:hover{background:rgba(255,255,255,0.1);border-color:var(--acc)}
+.ml svg{width:12px;height:12px;opacity:0.8}
+
+/* ── COVER SLIDE ────────────────────────────────────── */
+.c-tag{font-family:'Playfair Display',serif;font-size:clamp(16px,3vw,24px);font-weight:400;letter-spacing:0.06em;opacity:0.72;margin-bottom:14px}
+.c-main{font-family:'Playfair Display',serif;font-size:clamp(60px,13vw,130px);font-weight:700;line-height:0.9;letter-spacing:-0.04em;color:var(--acc);display:block;text-shadow:0 0 80px rgba(212,168,67,0.28)}
+.c-sub{font-family:'Playfair Display',serif;font-size:clamp(22px,4.5vw,44px);font-weight:400;font-style:italic;opacity:0.82;letter-spacing:0.04em;display:block;margin-top:10px}
+.c-hint{font-size:13px;font-weight:300;opacity:0.45;margin-top:36px;letter-spacing:0.1em}
+
+/* ── FINAL SLIDE ────────────────────────────────────── */
+.hearts{font-size:44px;margin-bottom:22px;display:block;animation:hp 2.2s ease-in-out infinite}
+@keyframes hp{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.f-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.5vw,22px);opacity:0.55;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);line-height:1.5}
+
+/* ── ITINERARY SLIDE ────────────────────────────────── */
+.si.itin{max-width:860px}
+.itin-title{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,58px);font-weight:700;letter-spacing:-0.02em}
+.itin-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 28px;margin-top:28px;text-align:left}
+.itin-div{background:rgba(255,255,255,0.1)}
+.itin-day-h{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--acc);display:flex;justify-content:space-between;align-items:baseline;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:14px}
+.itin-day-h span{font-family:'Inter',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;opacity:0.45}
+.itin-row{display:flex;align-items:flex-start;gap:9px;margin-bottom:11px}
+.itin-dot{color:var(--acc);opacity:0.45;font-size:9px;padding-top:4px;flex-shrink:0;line-height:1}
+.itin-row strong{font-size:12px;font-weight:500;display:block;margin-bottom:1px;letter-spacing:0.02em}
+.itin-row>div{font-size:11px;font-weight:300;opacity:0.55;line-height:1.45}
+@media(max-width:600px){.slide{padding:36px 22px 80px}.itin-grid{grid-template-columns:1fr}.itin-div{display:none}.headline{font-size:clamp(36px,11vw,56px)}.subtext{font-size:14px}.itin-day-h{font-size:16px}}
+
+/* ── PROGRESS DOTS ──────────────────────────────────── */
+.dots{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:100;align-items:center}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.22);cursor:pointer;transition:all 0.3s ease}
+.dot.active{width:22px;border-radius:3px;background:rgba(255,255,255,0.82)}
+
+
+
+/* ── TOP PROGRESS BAR ───────────────────────────────── */
+.bar{position:fixed;top:0;left:0;height:2px;background:var(--acc,#D4A843);transition:width 0.35s ease;z-index:200;box-shadow:0 0 8px var(--acc,#D4A843)}
+
+
+
+/* ── PARTICLES ──────────────────────────────────────── */
+.pts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.pt{position:absolute;border-radius:50%;animation:fUp linear infinite;opacity:0}
+@keyframes fUp{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:0.8}90%{opacity:0.35}100%{transform:translateY(-20px) scale(1);opacity:0}}
+
+
+</style>
+</head>
+<body>
+
+<div id="bar" class="bar" style="width:10%;--acc:#D4A843"></div>
+
+<div class="stage">
+
+<!-- 0 · COVER -->
+<div class="slide s0 active" data-i="0">
+  <div class="pts" id="pt0"></div>
+  <div class="si">
+    <div class="c-tag">You have a birthday surprise</div>
+    <span class="c-main">Happy<br>Birthday</span>
+    <span class="c-sub">and an adventure waiting</span>
+    <div class="c-hint">Swipe → to find out where you're going</div>
+  </div>
+</div>
+
+<!-- 1 · BARRACKS INN -->
+<div class="slide s1" data-i="1">
+  <div class="si">
+    <div class="eyebrow">Friday Night · November 6</div>
+    <div class="headline">The Barracks Inn</div>
+    <div class="dr"><span class="dia"></span><span>Ancaster, Ontario</span><span class="dia"></span></div>
+    <div class="subtext">A beautifully restored 19th-century heritage inn — exposed stone and brick, king suite, and a fireplace lounge with a wine library. Your home for the night.</div>
+    <div class="detail">Heritage Inn · Ancaster, Ontario</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=The+Barracks+Inn+425+Wilson+St+E+Ancaster+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 2 · TIFFANY FALLS -->
+<div class="slide s2" data-i="2">
+  <div class="si">
+    <div class="eyebrow">Friday Afternoon</div>
+    <div class="headline">Tiffany</div>
+    <div class="headline-sub">Falls</div>
+    <div class="dr"><span class="dia"></span><span>Ancaster Conservation Area</span><span class="dia"></span></div>
+    <div class="subtext">A 21-metre waterfall tucked into the Ancaster escarpment. A short trail through November mist.</div>
+    <div class="detail">Easy Trail · ~45 Minutes Round Trip</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Tiffany+Falls+Conservation+Area+Ancaster+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 3 · ANCASTER MILL -->
+<div class="slide s3" data-i="3">
+  <div class="si">
+    <div class="eyebrow">Friday Evening · Birthday Dinner</div>
+    <div class="headline">Ancaster Mill</div>
+    <div class="dr"><span class="dia"></span><span>Est. 1864</span><span class="dia"></span></div>
+    <div class="subtext">Dinner in a restored 1864 grist mill — floor-to-ceiling windows over a waterfall, an open fire, and a bottle of wine.</div>
+    <div class="detail">548 Old Dundas Rd · Ancaster · Est. 1864</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Ancaster+Mill+548+Old+Dundas+Rd+Ancaster+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 4 · EAST POINTERS -->
+<div class="slide s4" data-i="4">
+  <div class="si">
+    <div class="eyebrow">Friday Night · 8PM</div>
+    <div class="headline">The East</div>
+    <div class="headline-sub">Pointers</div>
+    <div class="dr"><span class="dia"></span><span>Live · Bridgeworks · Hamilton</span><span class="dia"></span></div>
+    <div class="subtext">An intimate venue. Doors open at 7PM — we'll be right up front.</div>
+    <div class="detail">Bridgeworks · Hamilton · Doors 7PM · Show 8PM · Nov 6, 2026</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Bridgeworks+200+Caroline+St+N+Hamilton+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 5 · NOTL -->
+<div class="slide s5" data-i="5">
+  <div class="si">
+    <div class="eyebrow">Saturday Morning · November 7</div>
+    <div class="headline">Niagara-on-</div>
+    <div class="headline-sub">the-Lake</div>
+    <div class="dr"><span class="dia"></span><span>Ontario Wine Country</span><span class="dia"></span></div>
+    <div class="subtext">Brunch on Queen Street. Boutique shops. Lake Ontario at the end of the road. One of the most charming small towns in Canada.</div>
+    <div class="detail">One Hour from Hamilton · Saturday Morning</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Old+Town+Niagara-on-the-Lake+Queen+Street+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 6 · TREADWELL -->
+<div class="slide s6" data-i="6">
+  <div class="si">
+    <div class="eyebrow">Saturday Morning · Brunch</div>
+    <div class="headline">Treadwell</div>
+    <div class="headline-sub">Cuisine</div>
+    <div class="dr"><span class="dia"></span><span>114 Queen Street · Niagara-on-the-Lake</span><span class="dia"></span></div>
+    <div class="subtext">Farm-to-table brunch on Queen Street — beautifully crafted seasonal dishes, a chef's counter overlooking the kitchen, and the kind of service that makes a Saturday morning feel special.</div>
+    <div class="detail">Open Saturday from 8AM · 114 Queen St</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Treadwell+Cuisine+114+Queen+St+Niagara-on-the-Lake+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 7 · TWO SISTERS -->
+<div class="slide s7" data-i="7">
+  <div class="si">
+    <div class="eyebrow">Saturday Afternoon · Wine Country</div>
+    <div class="headline">Two Sisters</div>
+    <div class="headline-sub">Vineyards</div>
+    <div class="dr"><span class="dia"></span><span>Niagara-on-the-Lake</span><span class="dia"></span></div>
+    <div class="subtext">Wine tasting, then a late lunch at Kitchen76 with vineyard views. A glass in the November light before the drive home.</div>
+    <div class="detail">240 John St E · Niagara-on-the-Lake · Kitchen76 Restaurant On-Site</div>
+    <a class="ml" href="https://maps.app.goo.gl/eKLwX7gjjyiZFDuM7?g_st=ic" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 8 · ITINERARY -->
+<div class="slide s8" data-i="8">
+  <div class="si itin">
+    <div class="eyebrow">The Full Plan</div>
+    <div class="itin-title">Your Itinerary</div>
+    <div class="dr"><span class="dia"></span><span>November 6 – 7, 2026</span><span class="dia"></span></div>
+    <div class="itin-grid">
+      <div>
+        <div class="itin-day-h">Friday <span>Nov 6</span></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Light Lunch in Ancaster</strong>Nearby the inn</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Tiffany Falls Hike</strong>Afternoon · ~45 min trail</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Check In · Barracks Inn</strong>Freshen up</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Ancaster Mill Dinner</strong>4:30 PM · Est. 1864</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>East Pointers Live</strong>Bridgeworks · Doors 7PM · Show 8PM</div></div>
+      </div>
+      <div class="itin-div"></div>
+      <div>
+        <div class="itin-day-h">Saturday <span>Nov 7</span></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Drive to Niagara-on-the-Lake</strong>~1 hour from Ancaster</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Treadwell Brunch</strong>114 Queen St · Niagara-on-the-Lake</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Explore Old Town</strong>Queen St · Shops · Waterfront</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Two Sisters Vineyards</strong>Wine tasting</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Kitchen76 Late Lunch</strong>Then the drive home</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Home</strong>Before the kids go to bed</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9 · FINAL -->
+<div class="slide s9" data-i="9">
+  <div class="pts" id="pt9"></div>
+  <div class="si">
+    <span class="hearts">🥂</span>
+    <div class="eyebrow">November 6 – 7, 2026</div>
+    <div class="headline" style="color:var(--acc);font-size:clamp(48px,9vw,90px)">Happy</div>
+    <div class="headline-sub" style="margin-top:4px">Birthday</div>
+    <div class="dr"><span class="dia"></span><span>All yours · All planned</span><span class="dia"></span></div>
+    <div class="subtext" style="opacity:0.6">The Barracks Inn · Tiffany Falls · Ancaster Mill · East Pointers at Bridgeworks · Niagara-on-the-Lake · Treadwell Cuisine · Two Sisters Vineyards · Kitchen76</div>
+    <div class="f-quote">Just bring yourself ♡</div>
+  </div>
+</div>
+
+</div><!-- /stage -->
+
+<!-- Controls -->
+<div class="dots" id="dots"></div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dotsEl=document.getElementById('dots');
+const barEl=document.getElementById('bar');
+const total=slides.length;
+let cur=0,txing=false;
+
+/* dots */
+slides.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>go(i);
+  dotsEl.appendChild(d);
+});
+
+function syncUI(){
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  const acc=getComputedStyle(slides[cur]).getPropertyValue('--acc').trim()||'#D4A843';
+  barEl.style.width=((cur+1)/total*100)+'%';
+  barEl.style.setProperty('--acc',acc);
+  barEl.style.background=acc;
+  barEl.style.boxShadow='0 0 8px '+acc;
+}
+
+function go(idx){
+  if(txing||idx===cur)return;
+  txing=true;
+  const prev=cur;
+  slides[prev].classList.remove('active');
+  slides[prev].classList.add('exiting');
+  setTimeout(()=>slides[prev].classList.remove('exiting'),700);
+  cur=((idx%total)+total)%total;
+  slides[cur].classList.add('active');
+  const si=slides[cur].querySelector('.si');
+  if(si){si.style.animation='none';si.offsetHeight;si.style.animation=''}
+  txing=false;
+  syncUI();
+  if(cur===0||cur===total-1)spawnPts(cur);
+}
+
+function goNext(){go(cur<total-1?cur+1:cur)}
+function goPrev(){go(cur>0?cur-1:cur)}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')goNext();
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')goPrev();
+});
+
+/* swipe on document — skip if tapping a link or button */
+let touchX=0;
+document.addEventListener('touchstart',e=>{
+  if(e.target.closest('a,.dot'))return;
+  touchX=e.touches[0].clientX;
+},{passive:true});
+document.addEventListener('touchend',e=>{
+  if(e.target.closest('a,.dot'))return;
+  const dx=e.changedTouches[0].clientX-touchX;
+  if(Math.abs(dx)>42){dx<0?goNext():goPrev();}
+});
+
+/* particles */
+function spawnPts(si){
+  const id='pt'+(si===0?'0':'9');
+  const box=document.getElementById(id);
+  if(!box)return;
+  box.innerHTML='';
+  const cols=si===0?['#D4A843','#ffffff','#c8b860','#fff9d0']:['#D4A843','#ff9ebc','#ffd700','#ffffff','#c8b060'];
+  for(let i=0;i<28;i++){
+    const p=document.createElement('div');
+    p.className='pt';
+    const sz=Math.random()*4+2,l=Math.random()*100,d=Math.random()*8+5,dl=Math.random()*4,c=cols[Math.floor(Math.random()*cols.length)];
+    p.style.cssText=`width:${sz}px;height:${sz}px;left:${l}%;bottom:-10px;background:${c};animation-duration:${d}s;animation-delay:${dl}s`;
+    box.appendChild(p);
+  }
+}
+
+
+/* init */
+syncUI();
+spawnPts(0);
+</script>
+</body>
+</html>
