@@ -26,12 +26,14 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
 .s7{background:radial-gradient(ellipse at 45% 45%,#2d0a18 0%,#1c0510 55%,#0f030a 100%)}
 .s8{background:radial-gradient(ellipse at 50% 50%,#0d1830 0%,#060f1e 55%,#030810 100%)}
 .s9{background:radial-gradient(ellipse at 50% 50%,#1a1400 0%,#2a2000 40%,#0d0800 100%)}
+.s10{background:radial-gradient(ellipse at 40% 55%,#0a1a0d 0%,#060f08 55%,#030804 100%)}
+.s11{background:radial-gradient(ellipse at 45% 40%,#1e0a0f 0%,#120509 55%,#090308 100%)}
 
 /* subtle star dust on all slides */
 .slide::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,0.14) 0%,transparent 100%),radial-gradient(1px 1px at 78% 68%,rgba(255,255,255,0.09) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 54% 18%,rgba(255,255,255,0.11) 0%,transparent 100%),radial-gradient(1px 1px at 36% 82%,rgba(255,255,255,0.07) 0%,transparent 100%);pointer-events:none}
 
 /* ── ACCENT COLORS ──────────────────────────────────── */
-.s0{--acc:#D4A843}.s1{--acc:#7DC47C}.s2{--acc:#7EC4D8}.s3{--acc:#D4A843}.s4{--acc:#9B8FE0}.s5{--acc:#D4849A}.s6{--acc:#D4B06A}.s7{--acc:#C47898}.s8{--acc:#D4A843}.s9{--acc:#D4A843}
+.s0{--acc:#D4A843}.s1{--acc:#7DC47C}.s2{--acc:#7EC4D8}.s3{--acc:#D4A843}.s4{--acc:#9B8FE0}.s5{--acc:#D4849A}.s6{--acc:#D4B06A}.s7{--acc:#C47898}.s8{--acc:#D4A843}.s9{--acc:#D4A843}.s10{--acc:#8FC47C}.s11{--acc:#D4849A}
 
 /* ── CONTENT ANIMATION ──────────────────────────────── */
 .si{position:relative;z-index:1;max-width:700px;width:100%;animation:cIn 0.8s ease 0.3s both}
@@ -116,22 +118,38 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
   </div>
 </div>
 
-<!-- 1 · LAUNDRY ROOMS -->
+<!-- 1 · THE LAUNDRY ROOMS -->
 <div class="slide s1" data-i="1">
   <div class="si">
     <div class="eyebrow">Friday Night · November 6</div>
-    <div class="headline">The Laundry Rooms</div>
+    <div class="headline">The Laundry</div>
+    <div class="headline-sub">Rooms</div>
     <div class="dr"><span class="dia"></span><span>Downtown Hamilton</span><span class="dia"></span></div>
-    <div class="subtext">Right in downtown Hamilton on Augusta St, walking distance to James Street. Your home for the night.</div>
-    <div class="detail">Downtown Hamilton · Augusta St</div>
-    <a class="ml" href="https://maps.app.goo.gl/QXipn5LLFR4GMbpV8?g_st=ic" target="_blank" rel="noopener">
+    <div class="subtext">A boutique suite hotel in the heart of Hamilton — stylish loft rooms, full kitchen, and a balcony. Steps from dinner and the concert. Your home for the night.</div>
+    <div class="detail">Augusta St · Downtown Hamilton · Ontario</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=The+Laundry+Rooms+155+Augusta+St+Hamilton+Ontario" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Maps
     </a>
   </div>
 </div>
 
-<!-- 2 · TIFFANY FALLS -->
+<!-- 2 · VERLAN -->
+<div class="slide s11" data-i="2">
+  <div class="si">
+    <div class="eyebrow">Friday · Lunch</div>
+    <div class="headline">Verlan</div>
+    <div class="dr"><span class="dia"></span><span>French Crêperie · Hamilton</span><span class="dia"></span></div>
+    <div class="subtext">Hamilton's beloved French crêperie — savory crepes with aioli, homemade French onion soup, and sweet crepes to finish. Light, fresh, and perfect before the afternoon ahead. One reviewer said you won't find better in Paris.</div>
+    <div class="detail">304 Barton St E · Hamilton · Open Fri 9am–4pm · ⭐ 4.9</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Verlan+Creperie+304+Barton+St+E+Hamilton+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 3 · TIFFANY FALLS -->
 <div class="slide s2" data-i="2">
   <div class="si">
     <div class="eyebrow">Friday Afternoon</div>
@@ -147,15 +165,15 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
   </div>
 </div>
 
-<!-- 3 · ANCASTER MILL -->
+<!-- 3 · THE FRENCH -->
 <div class="slide s3" data-i="3">
   <div class="si">
     <div class="eyebrow">Friday Evening · Birthday Dinner</div>
-    <div class="headline">Ancaster Mill</div>
-    <div class="dr"><span class="dia"></span><span>Est. 1864</span><span class="dia"></span></div>
-    <div class="subtext">Dinner in a restored 1864 grist mill — floor-to-ceiling windows over a waterfall, an open fire, and a bottle of wine.</div>
-    <div class="detail">548 Old Dundas Rd · Ancaster · Est. 1864</div>
-    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Ancaster+Mill+548+Old+Dundas+Rd+Ancaster+Ontario" target="_blank" rel="noopener">
+    <div class="headline">The French</div>
+    <div class="dr"><span class="dia"></span><span>King William Street · Hamilton</span><span class="dia"></span></div>
+    <div class="subtext">A classic French bistro — duck à l'orange, steak frites, and a silky chocolate mousse with orange zest to finish. Warm, candlelit, and a short walk back to the hotel before the show.</div>
+    <div class="detail">37 King William St · Hamilton · Ontario</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=The+French+Bistro+37+King+William+St+Hamilton+Ontario" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Maps
     </a>
@@ -194,32 +212,46 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
   </div>
 </div>
 
-<!-- 6 · TREADWELL -->
+<!-- 6 · CAFÉ LUMIÈRE -->
 <div class="slide s6" data-i="6">
   <div class="si">
-    <div class="eyebrow">Saturday Morning · Brunch</div>
-    <div class="headline">Treadwell</div>
-    <div class="headline-sub">Cuisine</div>
-    <div class="dr"><span class="dia"></span><span>114 Queen Street · Niagara-on-the-Lake</span><span class="dia"></span></div>
-    <div class="subtext">Farm-to-table brunch on Queen Street — beautifully crafted seasonal dishes, a chef's counter overlooking the kitchen, and the kind of service that makes a Saturday morning feel special.</div>
-    <div class="detail">Open Saturday from 8AM · 114 Queen St</div>
-    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Treadwell+Cuisine+114+Queen+St+Niagara-on-the-Lake+Ontario" target="_blank" rel="noopener">
+    <div class="eyebrow">Saturday Morning · First Stop</div>
+    <div class="headline">Café Lumière</div>
+    <div class="dr"><span class="dia"></span><span>Victoria Street · Niagara-on-the-Lake</span><span class="dia"></span></div>
+    <div class="subtext">A charming café tucked just off Queen Street. Coffee and a pastry to ease into the morning — almond croissant, lavender latte, warm room.</div>
+    <div class="detail">Victoria St · Niagara-on-the-Lake · Open from 9AM</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Cafe+Lumiere+Niagara-on-the-Lake+Ontario" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Maps
     </a>
   </div>
 </div>
 
-<!-- 7 · TWO SISTERS -->
+<!-- 7 · SCRAPE -->
+<div class="slide s10" data-i="7">
+  <div class="si">
+    <div class="eyebrow">Saturday Morning · Brunch</div>
+    <div class="headline">Scrape</div>
+    <div class="dr"><span class="dia"></span><span>106 Queen Street · Niagara-on-the-Lake</span><span class="dia"></span></div>
+    <div class="subtext">House-made sweet potato waffles piled with creative morning toppings — by a husband-and-wife chef team with a perfect five stars. The most talked-about spot on Queen Street.</div>
+    <div class="detail">106 Queen St · Niagara-on-the-Lake · Open from 10AM</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Scrape+106+Queen+St+Niagara-on-the-Lake+Ontario" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Maps
+    </a>
+  </div>
+</div>
+
+<!-- 7 · RAVINE VINEYARD -->
 <div class="slide s7" data-i="7">
   <div class="si">
     <div class="eyebrow">Saturday Afternoon · Wine Country</div>
-    <div class="headline">Two Sisters</div>
-    <div class="headline-sub">Vineyards</div>
-    <div class="dr"><span class="dia"></span><span>Niagara-on-the-Lake</span><span class="dia"></span></div>
-    <div class="subtext">Wine tasting, then a late lunch at Kitchen76 with vineyard views. A glass in the November light before the drive home.</div>
-    <div class="detail">240 John St E · Niagara-on-the-Lake · Kitchen76 Restaurant On-Site</div>
-    <a class="ml" href="https://maps.app.goo.gl/eKLwX7gjjyiZFDuM7?g_st=ic" target="_blank" rel="noopener">
+    <div class="headline">Ravine</div>
+    <div class="headline-sub">Vineyard</div>
+    <div class="dr"><span class="dia"></span><span>St. Davids · Niagara-on-the-Lake</span><span class="dia"></span></div>
+    <div class="subtext">A 34-acre estate with a farm-to-table bistro. Estate Cabernet Franc, housemade bread, candlelit dining room with views over the vines. The best lunch in wine country.</div>
+    <div class="detail">1366 York Rd · St. Davids · 15 Min from Old Town</div>
+    <a class="ml" href="https://www.google.com/maps/search/?api=1&query=Ravine+Vineyard+Restaurant+1366+York+Rd+St+Davids+Ontario" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Maps
     </a>
@@ -235,21 +267,21 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
     <div class="itin-grid">
       <div>
         <div class="itin-day-h">Friday <span>Nov 6</span></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Light Lunch in Ancaster</strong>Nearby the inn</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Leave Milan 7:30–8am</strong>Arrive Hamilton ~11:30am</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Verlan · French Crêperie</strong>Lunch on arrival · 304 Barton St E</div></div>
         <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Tiffany Falls Hike</strong>Afternoon · ~45 min trail</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Check In · Laundry Rooms</strong>Freshen up</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Ancaster Mill Dinner</strong>4:30 PM · Est. 1864</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Check In · The Laundry Rooms</strong>Freshen up</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>The French · Birthday Dinner</strong>37 King William St · ~5pm</div></div>
         <div class="itin-row"><span class="itin-dot">◆</span><div><strong>East Pointers Live</strong>Bridgeworks · Doors 7PM · Show 8PM</div></div>
       </div>
       <div class="itin-div"></div>
       <div>
         <div class="itin-day-h">Saturday <span>Nov 7</span></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Drive to Niagara-on-the-Lake</strong>~1 hour from Ancaster</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Treadwell Brunch</strong>114 Queen St · Niagara-on-the-Lake</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Explore Old Town</strong>Queen St · Shops · Waterfront</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Two Sisters Vineyards</strong>Wine tasting</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Kitchen76 Late Lunch</strong>Then the drive home</div></div>
-        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Home</strong>Before the kids go to bed</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Drive to Niagara-on-the-Lake</strong>~1 hr 15 min from Hamilton</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Café Lumière &amp; Scrape</strong>Coffee, pastry &amp; sweet potato waffles</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Explore Old Town</strong>Shops · Waterfront · Queen St</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Ravine Vineyard · Lunch</strong>Leave by 2:30pm · ~15 min from Old Town</div></div>
+        <div class="itin-row"><span class="itin-dot">◆</span><div><strong>Home by ~6–6:30pm</strong>Before the kids go to bed</div></div>
       </div>
     </div>
   </div>
@@ -264,20 +296,8 @@ body{font-family:'Inter',sans-serif;background:#0B1426;color:#FAFAFA;overflow:hi
     <div class="headline" style="color:var(--acc);font-size:clamp(48px,9vw,90px)">Happy</div>
     <div class="headline-sub" style="margin-top:4px">Birthday</div>
     <div class="dr"><span class="dia"></span><span>All yours · All planned</span><span class="dia"></span></div>
-    <div class="subtext" style="opacity:0.6">The Laundry Rooms · Tiffany Falls · Ancaster Mill · East Pointers at Bridgeworks · Niagara-on-the-Lake · Treadwell Cuisine · Two Sisters Vineyards · Kitchen76</div>
+    <div class="subtext" style="opacity:0.6">The Laundry Rooms · Tiffany Falls · The French · East Pointers at Bridgeworks · Niagara-on-the-Lake · Café Lumière · Scrape · Ravine Vineyard</div>
     <div class="f-quote">Just bring yourself ♡</div>
-  </div>
-</div>
-
-<!-- 10 · PERSONAL NOTE -->
-<div class="slide s9" data-i="10">
-  <div class="si">
-    <div class="eyebrow">From the heart</div>
-    <div class="headline" style="font-size:clamp(38px,7.5vw,68px);margin-bottom:18px">Happy Birthday, babe!</div>
-    <div class="subtext" style="max-width:620px;opacity:0.92;font-size:clamp(15.5px,2.5vw,19px);line-height:1.68">
-      I love you so much. It’s incredible watching you parent and I love doing life with you. Although the parenting adventure is a blast, I hope you will enjoy this adventure without the kiddos!
-    </div>
-    <div class="f-quote" style="margin-top:48px;border-top:none;padding-top:0;opacity:0.7">♡ Always yours</div>
   </div>
 </div>
 
